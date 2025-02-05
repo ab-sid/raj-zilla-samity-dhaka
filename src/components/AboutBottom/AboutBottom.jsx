@@ -1,31 +1,41 @@
 "use client";
 import React from "react";
+import Image from "next/image";
+import Map from "../Map/Map";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
-import "swiper/css/effect-cards";
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
 
 // import required modules
-import { EffectCards } from "swiper/modules";
-import Image from "next/image";
-import Map from "../Map/Map";
-
-// map
+import { EffectCoverflow, Pagination } from "swiper/modules";
 
 const AboutBottom = () => {
   return (
     <section className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-[1100px] mx-auto w-[96%] lg:w-full">
       {/* gallery */}
-      <div>
+      <div className="h-[230px]">
         <div className="min-h-9 flex items-center bg-[#00b46c]">
           <h2 className="pl-5 py-[5px] text-lg text-white">ছবিঘর</h2>
         </div>
-        <div className="w-[80%] mx-auto mt-4">
+        <div>
           <Swiper
-            effect={"cards"}
+            effect={"coverflow"}
             grabCursor={true}
-            modules={[EffectCards]}
+            centeredSlides={true}
+            slidesPerView={"auto"}
+            coverflowEffect={{
+              rotate: 50,
+              stretch: 0,
+              depth: 100,
+              modifier: 1,
+              slideShadows: true,
+            }}
+            pagination={false}
+            modules={[EffectCoverflow, Pagination]}
             className="mySwiper"
           >
             <SwiperSlide>
@@ -45,7 +55,7 @@ const AboutBottom = () => {
                   src="/assets/cards/2.jpeg"
                   width={328}
                   height={191}
-                  alt="card2"
+                  alt="card1"
                   className="w-full"
                 ></Image>
               </div>
@@ -131,7 +141,7 @@ const AboutBottom = () => {
         </div>
       </div>
       {/* map */}
-      <div>
+      <div className="h-[230px]">
         <div className="min-h-9 flex items-center bg-[#00b46c]">
           <h2 className="pl-5 py-[5px] text-lg text-white">অবস্থান মানচিত্র</h2>
         </div>
@@ -139,7 +149,7 @@ const AboutBottom = () => {
         <Map></Map>
       </div>
       {/* prsident */}
-      <div className="bg-[#F9EEDD]">
+      <div className="bg-[#F9EEDD] h-[230px]">
         {/* title */}
         <div
           className="min-h-9 flex items-center bg-[#00b46c]"

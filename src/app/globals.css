@@ -72,6 +72,9 @@ span.swiper-pagination-bullet-active{
   transform: translate3d(0, 0, 0);
   z-index: 10;
 }
+.swiper.swiper-cards {
+  overflow: visible;
+}
 
 
 
