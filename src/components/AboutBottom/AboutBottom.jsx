@@ -15,7 +15,7 @@ import Map from "../Map/Map";
 
 const AboutBottom = () => {
   return (
-    <section className="grid grid-cols-1 md:grid-cols-3 gap-5">
+    <section className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-[1100px] mx-auto w-[96%] lg:w-full">
       {/* gallery */}
       <div>
         <div className="min-h-9 flex items-center bg-[#00b46c]">

@@ -24,7 +24,7 @@ body {
 
 
 
-.autoplay-progress {
+ .autoplay-progress {
   position: absolute;
   right: 16px;
   bottom: 16px;
@@ -37,9 +37,9 @@ body {
   color: white;
   background: red;
   border-radius: 50%;
-}
+} 
 
-.autoplay-progress svg {
+ .autoplay-progress svg {
   transform: rotate(-90deg);
   width: 100%;
   height: 100%;
@@ -52,7 +52,7 @@ body {
   stroke-dasharray: 126;
   stroke-dashoffset: 126;
   transition: stroke-dashoffset 0.5s linear;
-}
+} 
 span.swiper-pagination-bullet {
   width: var(--swiper-pagination-bullet-width, var(--swiper-pagination-bullet-size, 15px));
   height: var(--swiper-pagination-bullet-height, var(--swiper-pagination-bullet-size, 15px));

@@ -4,7 +4,7 @@ import React from "react";
 
 const SamityAbout = () => {
   return (
-    <section className="grid grid-cols-12 gap-5 my-4">
+    <section className="grid grid-cols-12 gap-5 my-4 max-w-[1100px] mx-auto w-[96%] lg:w-full">
       <div className="col-span-12 lg:col-span-8">
         {/* left column */}
         <h2 className="text-[22px] text-[#251c5d] pb-2">

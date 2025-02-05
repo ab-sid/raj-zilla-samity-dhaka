@@ -7,7 +7,7 @@ import { IoClose } from "react-icons/io5";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="w-full">
+    <div className="max-w-[1100px] mx-auto w-[96%] lg:w-full">
       {/* for mobile */}
       <div className="lg:hidden flex justify-between items-center py-3">
         <div className="relative z-50">

@@ -27,7 +27,7 @@ const Slider = () => {
   };
 
   return (
-    <div className="relative">
+    <div className="relative max-w-[1100px] mx-auto w-[96%] lg:w-full">
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -53,7 +53,7 @@ const Slider = () => {
           </SwiperSlide>
         ))}
 
-        {/* Progress Indicator */}
+        {/* Progress Indicator  */}
         <div className="autoplay-progress absolute bottom-0 right-4 bg-black/50 p-2 rounded-full flex items-center justify-center w-12 h-12 text-white text-sm">
           <svg
             className="absolute top-0 left-0 w-full h-full z-50"
