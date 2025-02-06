@@ -15,9 +15,9 @@ import { EffectCoverflow, Pagination } from "swiper/modules";
 
 const AboutBottom = () => {
   return (
-    <section className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-[1100px] mx-auto w-[96%] lg:w-full">
+    <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-[1100px] mx-auto w-[96%] lg:w-full">
       {/* gallery */}
-      <div className="h-[230px]">
+      <div className="h-auto">
         <div className="min-h-9 flex items-center bg-[#00b46c]">
           <h2 className="pl-5 py-[5px] text-lg text-white">ছবিঘর</h2>
         </div>
@@ -141,7 +141,7 @@ const AboutBottom = () => {
         </div>
       </div>
       {/* map */}
-      <div className="h-[230px]">
+      <div className="h-auto order-3 lg:order-2">
         <div className="min-h-9 flex items-center bg-[#00b46c]">
           <h2 className="pl-5 py-[5px] text-lg text-white">অবস্থান মানচিত্র</h2>
         </div>
@@ -149,7 +149,7 @@ const AboutBottom = () => {
         <Map></Map>
       </div>
       {/* prsident */}
-      <div className="bg-[#F9EEDD] h-[230px]">
+      <div className="bg-[#F9EEDD] h-auto">
         {/* title */}
         <div
           className="min-h-9 flex items-center bg-[#00b46c]"

@@ -6,6 +6,11 @@ import { CiMenuFries } from "react-icons/ci";
 import { IoClose } from "react-icons/io5";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(null);
+
+  const toggleDropdown = (index) => {
+    setOpenDropdown(openDropdown === index ? null : index);
+  };
   return (
     <div className="max-w-[1100px] mx-auto w-[96%] lg:w-full">
       {/* for mobile */}
@@ -39,7 +44,7 @@ const Navbar = () => {
             </button>
 
             {/* Menu Items */}
-            <ul className="mt-12">
+            {/* <ul className="mt-12">
               <li className="bg-[#251C5D] text-white px-[17px] py-2 hover:bg-[#00B46C]">
                 <Link href="#" className="text-base">
                   প্রথম পাতা
@@ -162,12 +167,153 @@ const Navbar = () => {
                   যোগাযোগ
                 </Link>
               </li>
-            </ul>
-            {/* <ul className="mt-10">
-              <li className="p-2 border-b">Menu Item 1</li>
-              <li className="p-2 border-b">Menu Item 2</li>
-              <li className="p-2">Menu Item 3</li>
             </ul> */}
+            <ul className="mt-12">
+              <li className="bg-[#251C5D] text-white px-[17px] py-2 hover:bg-[#00B46C]">
+                <Link href="#" className="text-base">
+                  প্রথম পাতা
+                </Link>
+              </li>
+
+              <li className="bg-[#251C5D] text-white px-[17px] py-2 hover:bg-[#00B46C] relative">
+                <button
+                  onClick={() => toggleDropdown(1)}
+                  className="w-full text-left text-base"
+                >
+                  রাজশাহী জেলা
+                </button>
+                {openDropdown === 1 && (
+                  <ul className="absolute left-0 top-full bg-[#00B46C] w-[180px] z-50">
+                    <li className="px-[17px] py-2 hover:bg-[#251C5D]">
+                      <Link href="#" className="text-white">
+                        এক নজরে
+                      </Link>
+                    </li>
+                    <li className="px-[17px] py-2 hover:bg-[#251C5D]">
+                      <Link href="#" className="text-white">
+                        ইতিহাস ও ঐতিহ্য
+                      </Link>
+                    </li>
+                    <li className="px-[17px] py-2 hover:bg-[#251C5D]">
+                      <Link href="#" className="text-white">
+                        প্রখ্যাত ব্যাক্তিত্ব
+                      </Link>
+                    </li>
+                    <li className="px-[17px] py-2 hover:bg-[#251C5D]">
+                      <Link href="#" className="text-white">
+                        পেশাজীবী
+                      </Link>
+                    </li>
+                    <li className="px-[17px] py-2 hover:bg-[#251C5D]">
+                      <Link href="#" className="text-white">
+                        মুক্তিযোদ্ধা তালিকা
+                      </Link>
+                    </li>
+                    <li className="px-[17px] py-2 hover:bg-[#251C5D]">
+                      <Link href="#" className="text-white">
+                        দর্শনীয় স্থান
+                      </Link>
+                    </li>
+                  </ul>
+                )}
+              </li>
+
+              <li className="bg-[#251C5D] text-white px-[17px] py-2 hover:bg-[#00B46C]">
+                <Link href="#" className="text-base">
+                  সমিতির ইতিহাস
+                </Link>
+              </li>
+              <li className="bg-[#251C5D] text-white px-[17px] py-2 hover:bg-[#00B46C]">
+                <Link href="#" className="text-base">
+                  সংবিধান
+                </Link>
+              </li>
+
+              <li className="bg-[#251C5D] text-white px-[17px] py-2 hover:bg-[#00B46C] relative">
+                <button
+                  onClick={() => toggleDropdown(2)}
+                  className="w-full text-left text-base"
+                >
+                  বক্তব্য
+                </button>
+                {openDropdown === 2 && (
+                  <ul className="absolute left-0 top-full bg-[#00B46C] w-[180px] z-50">
+                    <li className="px-[17px] py-2 hover:bg-[#251C5D]">
+                      <Link href="#" className="text-white">
+                        সভাপতি
+                      </Link>
+                    </li>
+                    <li className="px-[17px] py-2 hover:bg-[#251C5D]">
+                      <Link href="#" className="text-white">
+                        সাধারণ সম্পাদক
+                      </Link>
+                    </li>
+                  </ul>
+                )}
+              </li>
+
+              <li className="bg-[#251C5D] text-white px-[17px] py-2 hover:bg-[#00B46C] relative">
+                <button
+                  onClick={() => toggleDropdown(3)}
+                  className="w-full text-left text-base"
+                >
+                  সদস্য
+                </button>
+                {openDropdown === 3 && (
+                  <ul className="absolute left-0 top-full bg-[#00B46C] w-[180px] z-50">
+                    <li className="px-[17px] py-2 hover:bg-blue-900">
+                      <Link href="#" className="text-white">
+                        আজীবন সদস্য
+                      </Link>
+                    </li>
+                    <li className="px-[17px] py-2 hover:bg-blue-900">
+                      <Link href="#" className="text-white">
+                        আজীবন সদস্য ফর্ম
+                      </Link>
+                    </li>
+                    <li className="px-[17px] py-2 hover:bg-blue-900">
+                      <Link href="#" className="text-white">
+                        সাধারণ সদস্য ফর্ম
+                      </Link>
+                    </li>
+                  </ul>
+                )}
+              </li>
+
+              <li className="bg-[#251C5D] text-white px-[17px] py-2 hover:bg-[#00B46C] relative">
+                <button
+                  onClick={() => toggleDropdown(4)}
+                  className="w-full text-left text-base"
+                >
+                  রাজশাহীর উৎসব
+                </button>
+                {openDropdown === 4 && (
+                  <ul className="absolute left-0 top-full bg-[#00B46C] w-[180px] z-50">
+                    <li className="px-[17px] py-2 hover:bg-[#251C5D]">
+                      <Link href="#" className="text-white">
+                        উৎসব ২০২৫
+                      </Link>
+                    </li>
+                  </ul>
+                )}
+              </li>
+
+              <li className="bg-[#251C5D] text-white px-[17px] py-2 hover:bg-[#00B46C]">
+                <Link href="#" className="text-base">
+                  কমিটি
+                </Link>
+              </li>
+              <li className="bg-[#251C5D] text-white px-[17px] py-2 hover:bg-[#00B46C]">
+                <Link href="#" className="text-base">
+                  ছবিঘর
+                </Link>
+              </li>
+              <li className="bg-[#251C5D] text-white px-[17px] py-2 hover:bg-[#00B46C]">
+                <Link href="#" className="text-base">
+                  যোগাযোগ
+                </Link>
+              </li>
+            </ul>
           </div>
         </div>
         <div>
